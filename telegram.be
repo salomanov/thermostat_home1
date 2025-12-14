@@ -84,10 +84,12 @@ end
 def tele_sensor(si7021_data)
   var temp = si7021_data["Temperature"]
   var street = get_weather()
-  if persist.temp != temp || persist.street != street && street != nil
+  if persist.temp != temp || persist.street != street
     persist.temp = temp
+    if street != nil
     persist.street = street
-    tasmota.cmd("TmSend " + "🏠  " + str(temp) + " °C " + "🏞 " + str(street) + " °C ")
+    end
+    tasmota.cmd("TmSend " + "🏠  " + str(temp) + " °C " + "🏞 " + str(persist.street) + " °C ")
   end
 end
 
