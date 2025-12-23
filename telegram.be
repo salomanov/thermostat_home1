@@ -40,9 +40,7 @@ def telegram_info()
          var response_text = 
                              "🌡 " + str(temp) +  "/" + str(persist.target_temp) + " °C " +
                              "💦 " + str(hum) + " % " +
-                            ( pow  ? "🔥Нагревается " : "❄️Остывает ") +  tmc(total_second) +
-                            ( persist.heat_time_duration  ? " 📈" + "Скорость нагрева " + tmc(persist.heat_time_duration) : "" ) + 
-                            ( persist.cooling_time_duration  ? " 📉" + "Скорость остывания " + tmc(persist.cooling_time_duration) : "" )
+                            ( pow  ? "🔥Нагревается " +  tmc(total_second) + " 📉" + "Остыло за " + tmc(persist.cooling_time_duration) : "❄️Остывает " +  tmc(total_second) + " 📈" + "Нагрелось за " + tmc(persist.heat_time_duration))
 
          # Отправляем форматированный текст обратно в Telegram
          tasmota.cmd("TmSend " + response_text)
