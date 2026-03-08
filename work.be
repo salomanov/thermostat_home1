@@ -1,4 +1,4 @@
-
+﻿
 
 def work_power(value)
     if value
@@ -17,6 +17,7 @@ def work_power(value)
             tasmota.cmd('TERMO')
         end
     end
+    persist.save()
 end
 
 tasmota.add_rule("Power2#State", work_power, "work_power1")
@@ -26,17 +27,18 @@ def work_set()
     if persist.button
     persist.button = 0
     temp_min_max('MAX')
-    else 
+    else
     persist.button = 1
     temp_min_max('MIN')
     end
+    persist.save()
 end
 
 
 def track_power()
      persist.track = ! persist.track
-      tasmota.cmd("TmSend " +  ( persist.track  ? "Следим " : "Не следим"))
-  
+      tasmota.cmd("TmSend " + (persist.track ? "Следим" : "Не следим"))
+      persist.save()
 end
 
 
