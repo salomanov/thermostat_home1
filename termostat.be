@@ -1,4 +1,4 @@
-﻿def termostatFSdef()
+def termostatFSdef()
     var trmst = tasmota.cmd("THERMOSTATMODESET")["ThermostatModeSet1"]
     print(trmst)
     if trmst == 1

@@ -1,4 +1,4 @@
-﻿
+
 
 def work_power(value)
     if value

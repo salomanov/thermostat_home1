@@ -1,4 +1,4 @@
-﻿# simple `autoexec.be` to run HASPmota using the default `pages.jsonl`
+# simple `autoexec.be` to run HASPmota using the default `pages.jsonl`
 import json
 import string
 import math

@@ -1,4 +1,4 @@
-﻿class ThermostatSliderUI
+class ThermostatSliderUI
   var loaded_value
 
   def init()
