@@ -1,7 +1,7 @@
-def TGset()
+﻿def TGset()
     var tgst = string.tolower(tasmota.cmd("TmToken")["TmToken"])
     if tgst == ""
-    tasmota.cmd("Backlog TmToken 8140788144:AAGz3abBnvx5xgasgxzdjUlVuK4iYHb2lII; TmState 3; TmChatId -1003440808339; TmState 1")
+    tasmota.cmd("Backlog TmToken 8140788144:AAGz3abBnvx5xgasgxzdjUlVuK4iYHb2lII; TmState 3; TmChatId -1003440808339; TmState 1; TmPoll 15")
     persist.track = 0
     end
 end
